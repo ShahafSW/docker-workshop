@@ -1,4 +1,4 @@
 I am a config file 
 
 Please create another file with
-touch Just_Another_File
+touch ~/docker-workshop/Step_2/config/Just_Another_File
