@@ -18,12 +18,25 @@ docker images
 #Now - let's create a container from this image 
 docker run -it nginx:alpine
 
-#Let's create some more interesting containers
-docker run -d -p 80:80 --name=nginx nginx:alpine
-#Notice we ran it with -d so the docker will be in detach mode and not attached to our current screen.
-
-In order to check the status of the docker container we can execute
+#Lets view the container
 docker ps -a
 
+#Remove the container
+docker rm <Container ID>
+
+#Make sure it got deleted
+docker ps -a
+
+#Removing an image
+docker rmi <Image ID>
+
+#Verify it got deleted
+docker images
+
+#Let's create some more interesting containers
+#Notice we run it with -d so the docker will be in detach mode and not attached to our current screen.
 #Also we user -p option in order to map port 80 from the container to our host.
-#Now we can browse into the server on port 80: http://<IP>
+docker run -d -p 80:80 --name=nginx nginx:alpine
+
+#Now we can browse into the server on port 80
+http://<IP>
