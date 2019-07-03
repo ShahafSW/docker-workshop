@@ -29,7 +29,7 @@ docker exec -it Clalit_Container env
 
 #ls the /mnt/
 docker exec -it Clalit_Container ls /mnt/
-docker exec -it Clalit_Container cat /mnt/config_file
+docker exec -it Clalit_Container cat /mnt/my_config
 
 #Create the file
 
