@@ -1,4 +1,4 @@
 I am a config file 
 
-Please exit from the container and create another file with
+Create another file with
 touch ~/docker-workshop/Step_2/config/Just_Another_File
