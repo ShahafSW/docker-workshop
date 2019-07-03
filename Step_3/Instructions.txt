@@ -1,0 +1,34 @@
+###################################################################
+###################################################################
+			Dockerfile & Registry
+###################################################################
+###################################################################
+
+
+#For this exrecise we will need docker-hub account.
+#First docker image we will create will be a demo PHP site. We copied a site from https://startbootstrap.com/themes/freelancer/ to the folder php-site and created a simple Dockerfile.
+#Lets see the read the Dockerfile
+cat Dockerfile
+
+#In order to build the image we will run the command
+docker build -t php-site:version1 .
+
+#Our docker image is ready. to test it we can execute
+docker run -d -p 80:80 php-site:version1 
+#And check that the site is working as expected on http://<Server IP>
+
+#In order to tag our image - we can use the command docker tag for example
+docker tag php-site:version1 <your-dockerhub-account>/php-site:latest
+
+#We can save our new image in dockerhub - for that we need to login
+docker login
+
+#After login we can push the image
+docker push <your-dockerhub-account>/php-site:latest
+
+
+###################################################################
+###################################################################
+                        GREAT JOB!
+###################################################################
+###################################################################
