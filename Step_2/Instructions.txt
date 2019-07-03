@@ -37,7 +37,7 @@ docker exec -it Clalit_Container cat /mnt/my_config
 docker exec -it Clalit_Container ls /mnt/
 
 #In order to do some checks we may would like to copy files from/to our container, we will use the command docker cp for example
-docker cp src/index.html <Container_ID>:/usr/share/nginx/html
+docker cp src/index.html Clalit_Container:/usr/share/nginx/html
 #We changed the default index file on our nginx container and now when we will check http://<Server IP> we will see the new page
 
 
