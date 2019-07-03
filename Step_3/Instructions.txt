@@ -15,17 +15,18 @@ docker build -t php-site:version1 .
 
 #Our docker image is ready. to test it we can execute
 docker run -d -p 80:80 php-site:version1 
-#And check that the site is working as expected on http://<Server IP>
-
-#In order to tag our image - we can use the command docker tag for example
-docker tag php-site:version1 <your-dockerhub-account>/php-site:latest
+#Check that the site is working as expected on http://<Server IP>
 
 #We can save our new image in dockerhub - for that we need to login
 docker login
 
+#In order to tag our image - we can use the command docker tag for example
+docker tag php-site:version1 <your-dockerhub-account>/php-site:latest
+
 #After login we can push the image
 docker push <your-dockerhub-account>/php-site:latest
 
+#Lets go to http://dockerhub.com
 
 ###################################################################
 ###################################################################
