@@ -7,7 +7,7 @@
 
 #For this workshop we need DockerCE installed on your laptop/server
 #So lets run the following command to verify that we have docker installed
-docker --help
+docker --version
 
 #Now, lets pull an image of nginx:alpine 
 docker pull nginx:alpine
