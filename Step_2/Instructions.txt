@@ -25,16 +25,16 @@ docker rm <Container ID>
 docker run -d --name=Clalit_Container -e Company=Clalit -v ~/docker-workshop/Step_2/config/:/mnt nginx:alpine
 
 #Check the env
-docker exec -it --name=Clalit_Container env
+docker exec -it Clalit_Container env
 
 #ls the /mnt/
-docker exec -it --name=Clalit_Container ls /mnt/
-docker exec -it --name=Clalit_Container cat /mnt/config_file
+docker exec -it Clalit_Container ls /mnt/
+docker exec -it Clalit_Container cat /mnt/config_file
 
 #Create the file
 
 #ls the /mnt/
-docker exec -it --name=Clalit_Container ls /mnt/
+docker exec -it Clalit_Container ls /mnt/
 
 #In order to do some checks we may would like to copy files from/to our container, we will use the command docker cp for example
 docker cp src/index.html <Container_ID>:/usr/share/nginx/html
