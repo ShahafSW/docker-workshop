@@ -22,7 +22,7 @@ docker stop <Container ID>
 docker rm <Container ID>
 
 #Other flags of docker run are -v for mounting folder from the host to the container -e for setting environtment variable
-docker run -it -e Company=Clalit -v ~/docker-workshop/Step_2/config/:/mnt nginx:alpine sh
+docker run -d -e Company=Clalit -v ~/docker-workshop/Step_2/config/:/mnt nginx:alpine
 
 #In order to do some checks we may would like to copy files from/to our container, we will use the command docker cp for example
 docker cp src/index.html <Container_ID>:/usr/share/nginx/html
