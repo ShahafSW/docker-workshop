@@ -22,7 +22,7 @@ docker stop <Container ID>
 docker rm <Container ID>
 
 #Other flags of docker run are -v for mounting folder from the host to the container -e for setting environtment variable
-docker run -d --name=Clalit_Container -e Company=Clalit -v ~/docker-workshop/Step_2/config/:/mnt nginx:alpine
+docker run -d --name=Clalit_Container -p 80:80 -e Company=Clalit -v ~/docker-workshop/Step_2/config/:/mnt nginx:alpine
 
 #Check the env
 docker exec -it Clalit_Container env
