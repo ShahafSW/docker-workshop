@@ -6,10 +6,10 @@
 
 
 #If we want to stop a container
-docker container stop <Container ID>
+docker stop <Container ID>
 
 #And to start it
-docker container start <Container ID>
+docker start <Container ID>
 
 #Now we want to execute a command inside the container
 docker exec -it <Container ID> ls -l /
@@ -22,7 +22,7 @@ docker stop <Container ID>
 docker rm <Container ID>
 
 #Other flags of docker run are -v for mounting folder from the host to the container -e for setting environtment variable
-docker run -d --name=Clalit_Container -p 80:80 -e Company=Clalit -v ~/docker-workshop/Step_2/config/:/mnt nginx:alpine
+docker run -d --name=Clalit_Container -p 80:80 -e Company=Clalit -v ~/docker-workshop/step_2/config/:/mnt nginx:alpine
 
 #Check the env
 docker exec -it Clalit_Container env
@@ -39,10 +39,3 @@ docker exec -it Clalit_Container ls /mnt/
 #In order to do some checks we may would like to copy files from/to our container, we will use the command docker cp for example
 docker cp src/index.html Clalit_Container:/usr/share/nginx/html
 #We changed the default index file on our nginx container and now when we will check http://<Server IP> we will see the new page
-
-
-###################################################################
-###################################################################
-                        GREAT JOB!
-###################################################################
-###################################################################
