@@ -15,10 +15,13 @@ docker pull nginx:alpine
 docker images
 
 #Now - let's create a container from this image 
-docker run -it nginx:alpine
+docker run -d nginx:alpine
 
 #Lets view the container
 docker ps -a
+
+#Stop the container
+docker stop <Conatiner ID>
 
 #Remove the container
 docker rm <Container ID>
@@ -33,9 +36,8 @@ docker rmi <Image ID>
 docker images
 
 #Let's create some more interesting containers
-#Notice we run it with -d so the docker will be in detach mode and not attached to our current screen.
-#Also we user -p option in order to map port 80 from the container to our host.
 docker run -d -p 80:80 --name=nginx nginx:alpine
+#We used -p option in order to map port 80 from the container to our host.
 
 #Now we can browse into the server on port 80
 http://<IP>
