@@ -4,38 +4,29 @@
 ###################################################################
 ###################################################################
 
-
-#If we want to stop a container
-docker stop <Container ID>
-
-#And to start it
-docker start <Container ID>
-
-#Now we want to execute a command inside the container
-docker exec -it <Container ID> ls -l /
-
 #With "docker exec" we can even run a shell inside the container
 docker exec -it nginx sh
+#Run some commands in the container
 
 #Lets remove this container by
 docker stop <Container ID>
 docker rm <Container ID>
 
 #Other flags of docker run are -v for mounting folder from the host to the container -e for setting environtment variable
-docker run -d --name=Clalit_Container -p 80:80 -e Company=Clalit -v ~/docker-workshop/step_2/config/:/mnt nginx:alpine
+docker run -d --name=clalit_container -p 80:80 -e Company=Clalit -v ~/docker-workshop/step_2/config/:/mnt nginx:alpine
 
 #Check the env
-docker exec -it Clalit_Container env
+docker exec -it clalit_container env
 
 #ls the /mnt/
-docker exec -it Clalit_Container ls /mnt/
-docker exec -it Clalit_Container cat /mnt/my_config
+docker exec -it clalit_container ls /mnt/
+docker exec -it clalit_container cat /mnt/my_config
 
 #Create the file
 
 #ls the /mnt/
-docker exec -it Clalit_Container ls /mnt/
+docker exec -it clalit_container ls /mnt/
 
 #In order to do some checks we may would like to copy files from/to our container, we will use the command docker cp for example
-docker cp src/index.html Clalit_Container:/usr/share/nginx/html
+docker cp src/index.html clalit_container:/usr/share/nginx/html
 #We changed the default index file on our nginx container and now when we will check http://<Server IP> we will see the new page

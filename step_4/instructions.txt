@@ -1,0 +1,19 @@
+###################################################################
+###################################################################
+			DAY TWO OPERATION
+###################################################################
+###################################################################
+
+#Now that we have a container running, lets understand how we can monitor it.
+#Printing container logs by
+docker logs -f <Container ID>
+
+#Now browse to you server http://<IP> and see if you are getting new logs on your container
+
+#We can have low level information on the container
+docker inspect <Container ID>
+#This command will show us every detail of the container.
+ID, environment, image details, errors, network etc...
+
+#In case we want to have a general picture of our containrs, we can use 
+docker stats
